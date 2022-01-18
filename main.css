@@ -165,7 +165,7 @@ color:var(--orange-background-color);
 /*----------------HEADER-BANNER----------------*/
 .header-banner{
     width:100%;
-    background-image: url("/assets/headerbanner.png")  ;
+    background-image: url("assets/headerbanner.png")  ;
     background-position: center;
     background-size: cover;
     height:35rem;
@@ -460,7 +460,7 @@ margin-bottom:2rem;
     height:50rem;
 }
 .step-banner-img{
-    background-image: url("/assets/build.png");
+    background-image: url("assets/build.png");
     height:70%;
     width:100%;
     object-fit:cover;
@@ -471,16 +471,16 @@ margin-bottom:2rem;
 
 @keyframes slider{
     0%{
-        background-image: url("/assets/build.png");
+        background-image: url("assets/build.png");
     }
     45%{
-        background-image: url("/assets/bluelighht.png");
+        background-image: url("assets/bluelighht.png");
     }
     65%{
-        background-image: url("/assets/bluelighht.png");
+        background-image: url("assets/bluelighht.png");
     }
     80%{
-        background-image: url("/assets/build.png");
+        background-image: url("assets/build.png");
     }
 }
 
@@ -587,7 +587,7 @@ margin-top:4rem ;
     position: absolute;
 }
 .contact-section{
-    background-image: url("/assets/vu-anh-TiVPTYCG_3E-unsplash.jpg");
+    background-image: url("assets/vu-anh-TiVPTYCG_3E-unsplash.jpg");
     height:100vh;
     width:100vw;
     object-fit:cover;
