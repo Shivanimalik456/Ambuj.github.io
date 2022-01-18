@@ -1,0 +1,1033 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:ital,wght@0,300;0,400;1,400&family=Oswald:wght@200;500&display=swap');
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/*-------------variables---------------*/
+:root{
+    --body-font:'Open Sans', sans-serif;
+    --heading-font:'Oswald', sans-serif;
+    --orange-light: rgb(255, 62, 4);
+    --orange-color:	#ff5b02;
+ --orange-background-color:rgb(255,99,71);
+
+}
+
+body{
+    font-family: var(--body-font);
+    background-color: whitesmoke;
+    overflow-x:hidden;
+}
+
+
+/*-------------Global-classes---------------*/
+h1{
+    font-family: var(--heading-font);
+    color:var(--orange-color);
+    letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+a{
+    text-decoration: none;
+}
+.body-btn{
+    background-color: #ff4e00;
+    background-image: linear-gradient(315deg, #ff4e00 0%, #ec8805 84%);
+     padding:0.7rem 1.8rem;
+     color:white;  
+     text-align: center;
+     font-size:1.2rem;
+     text-transform: uppercase;
+     font-weight: bold;
+}
+.body-btn:hover{
+    background-color: #dd4f0d;
+    background-image: none;
+}
+/*----------------header---------------*/
+.logo{
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 0.1rem;
+    padding-left:2rem;
+   
+}
+.logo a{
+    text-decoration: none;
+    color:var(--orange-color);
+}
+.header{
+    width:100%;
+    height:60px;
+    position:fixed;
+    z-index: 11;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 1s ease-in-out;
+}
+.social-icons{
+    margin-right:3rem;
+    
+}
+.social-icons  i{
+padding:0rem 0.5rem;
+color:black;
+}
+.social-icons  i:hover{
+color:var(--orange-color);
+}
+/*----------------sidebar----------------*/
+.sidebar-icon-toggle{
+    width:22px;
+    height:22px;
+    cursor:pointer;
+    position:fixed;
+    top:20px;
+    left:50%;
+    z-index:12;
+}
+
+.spinner{
+    height:4px;
+    background:rgb(0, 0, 0);
+    transition:all 0.3s;
+}
+ .middle-spinner,
+ .bottom-spinner{
+    margin-top:3px;
+}
+input[type="checkbox"]{
+    display: none;
+    visibility: 0;
+}
+.sidebar-icon-close{
+    float: right;
+position:absolute;
+top:30px;
+right:30px;
+    
+}
+
+#header-sidebar{
+    height:100%;
+    position:fixed;
+    left:0;
+    top:0;
+    width:250px;
+    margin-top:3rem;
+background-color:rgb(0, 0, 0);
+color:white;
+transform:translateX(-250px);
+transition: transform 250ms ease-in-out;
+z-index:3;
+}
+
+#opensidebarmenu:checked~ #header-sidebar{
+    transform:translateX(0px);
+   
+}
+#header-sidebar .menu{
+list-style: none;
+margin-top:6rem;
+
+}
+
+#header-sidebar .menu li{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+color:white;
+padding:1rem;
+align-items: center;
+border-bottom:1px solid rgba(255, 255, 255, 0.8);
+transition:all 0.5s ease-in-out;
+}
+
+#header-sidebar .menu li a{
+    color:white;
+    display:block;
+    text-decoration: none;
+    text-align: left;
+    text-transform: uppercase;
+}
+#header-sidebar .menu li:hover{
+    background-color: rgb(54, 54, 54);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+#header-sidebar .menu li a:hover{
+color:var(--orange-background-color);
+}
+
+/*----------------HEADER-BANNER----------------*/
+.header-banner{
+    width:100%;
+    background-image: url("/assets/headerbanner.png")  ;
+    background-position: center;
+    background-size: cover;
+    height:35rem;
+    transition: all 1.4s ease-in;
+    transform: scale(1.0.5);
+    overflow: hidden;
+
+    position: relative;
+}
+.header-banner::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    background-color: black;
+    opacity:0.2;
+    z-index:1;
+    }
+.header-banner .header-banner-content{
+   color:white;
+  display:flex;
+  flex-direction:column;
+  width:60%;
+  height:80%;
+  justify-content: left;
+  align-items: left;
+  margin:3rem 1rem;
+  margin-top:4rem;
+  padding:1rem;
+  padding-left:2rem;
+  z-index:12;
+}
+.header-banner .header-banner-content h1{
+font-size:clamp(3rem, 5vw, 5rem);
+width:40%;
+line-height: clamp(3.5rem, 5.5vw, 5.5rem);
+margin-bottom: 2rem;
+text-transform: none;
+z-index:2;
+margin-top:2rem;
+}
+.header-banner .header-banner-content p{
+    font-size:clamp(1rem, 1.5vw, 1.2rem);
+    width:70%;
+margin-bottom: 1rem;
+z-index:2;
+}
+
+.header-banner .header-banner-content .email-input{
+    width:70%;
+    margin:1rem 0rem;
+    height:3rem;
+    position:relative;
+    z-index:10;
+    z-index:2;
+}
+
+.header-banner .header-banner-content .email-input input[type="email"]{
+width:100%;
+height:100%;
+padding-left:1rem;
+position:relative;
+outline: none;
+border:none;
+box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.header-banner .header-banner-content .email-input span.submit-btn{
+    position: absolute;
+    right:0;
+    top:0;
+    height:100%;
+   background-color: #ff4e00;
+    background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 84%);
+     padding:0.7rem 0.5rem;
+    width:25%;
+    text-align: center;
+    cursor: pointer;
+    transition:all 0.5s ease-in-out;
+  
+}
+    .header-banner .header-banner-content .email-input span.submit-btn a{
+        color:white;
+        text-decoration: none;
+        text-transform: uppercase;
+    
+    }
+
+    .header-banner .header-banner-content .email-input span.submit-btn:hover{
+        background-color: var(--orange-color);
+        background-image: none;
+    }
+
+/*----------------CARD-SECTION----------------*/
+.cards-section{
+    padding:4rem 12rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+}
+
+.cards-section .cards{
+background-color: var(--orange-color);
+color:white;
+width:15rem;
+flex:1 1 15rem;
+height:25rem;
+max-height:30rem;
+padding:1rem 2rem;
+}
+
+.cards-section .cards .num-heading{
+font-size:4rem;
+font-weight: bolder;
+}
+
+.cards-section .cards h1{
+    color:white;
+font-weight: normal;
+margin-bottom: 1rem;
+font-size:1.3rem;
+}
+
+.cards-section .cards a i{
+    color:black;
+    background-color: white;
+    border-radius: 50%;
+  padding:1rem 1.4rem;
+  font-size:1.8rem;
+margin-top:2.2rem;
+margin-bottom: 1rem;
+}
+
+.cards-section .card1{
+background-color: var(--orange-color);
+}
+.cards-section .card2{
+background-color: var(--orange-light);
+}
+.cards-section .card3{
+background-color: #292d33;
+}
+.cards-section .card4{
+    background-color: #555c66;
+}
+
+
+/*----------------    SUSTAINABLE-SECTION   ----------------*/
+.sustainable-section{
+    background-color: #eeeded;
+    padding:4rem 5rem;
+    text-align: center;
+}
+.sustainable-section h1{
+font-size:clamp(2.5rem, 4vw, 3.5rem);
+text-transform: inherit;
+margin: 1rem;
+}
+
+.sustainable-section p{
+    width:55%;
+    margin:auto;
+    font-size:1.2rem;
+    line-height:2rem;
+    color:rgb(80, 80, 80);
+    margin-bottom: 2.6rem;
+}
+
+
+
+/*----------------    CONSTRUCTION-SERVICE-SECTION   ----------------*/
+.constuction-services{
+background-color:var(--orange-color);
+padding:4rem 8rem;
+width:100%;
+}
+.constuction-services .construction-services-container{
+margin:auto;
+display:grid;
+grid-template-columns: 0.9fr 1fr 1fr;
+grid-template-rows: 20rem 20rem;
+content: inherit;
+}
+.construction-services-content-container{
+grid-area:1/1/3/2;
+padding:2rem;
+background-color:white;
+padding-top:4rem;
+}
+.construction-services-content-container small{
+text-transform: uppercase;
+font-size:1.2rem;
+letter-spacing: 0.1rem;
+
+}
+
+.construction-services-content-container h1{
+font-size:3rem;
+line-height: 3.5rem;
+margin:0.5rem 0rem;
+text-transform: inherit;
+}
+.construction-services-content-container h3{
+    font-size:1.2rem;
+    line-height: 1.5rem;
+    font-weight:bold;
+    margin:1rem 0rem;
+  
+    }
+
+.construction-services-content-container .list{
+padding-left:1.5rem;
+font-size:1.1rem;
+color:rgb(39, 39, 39);
+margin-bottom: 3rem;
+    }
+   
+.construction-services-content-container a{
+color:white;
+}
+
+
+.girl-img{
+    grid-area:1/2/3/3;
+}
+.paper-img{
+grid-area:1/3/2/4;
+}
+.house-img{
+    grid-area:2/3/3/4;
+}
+
+.img1 img{
+    width:100%;
+    height:100%;
+object-fit: cover;
+}
+
+
+
+/*----------------    DREAM-HOME-SECTION   ----------------*/
+.dream-home{
+display:grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 34rem;
+justify-content: center;
+align-items: center;
+background-color: white;
+}
+.dream-home .dream-home-content{
+   height:fit-content;
+    text-align: left;
+   padding:0rem 2rem;
+   width:70%;
+   margin:auto;
+}
+
+.dream-home .dream-home-content small{
+font-size: 1.2rem;
+text-transform: uppercase;
+letter-spacing: 0.1rem;
+}
+.dream-home .dream-home-content h1{
+font-size:3.5rem;
+text-transform: inherit;
+letter-spacing: 0.1rem;
+}
+.dream-home .dream-home-content p{
+font-size: 1.2rem;
+line-height: 2rem;
+margin:1rem 0rem;
+margin-bottom:2rem;
+}
+
+.dream-home .dream-home-img{
+    width:100%;
+    height:100%;
+    text-align:left;
+}
+.dream-home .dream-home-img img{
+    width:70%;
+    height:100%;
+    object-fit:contain;
+}
+
+
+
+/*----------------    STEP-BANNER-SECTION   ----------------*/
+.step-banner{
+    height:50rem;
+}
+.step-banner-img{
+    background-image: url("/assets/build.png");
+    height:70%;
+    width:100%;
+    object-fit:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: slider 18s infinite ease-in-out;
+}
+
+@keyframes slider{
+    0%{
+        background-image: url("/assets/build.png");
+    }
+    45%{
+        background-image: url("/assets/bluelighht.png");
+    }
+    65%{
+        background-image: url("/assets/bluelighht.png");
+    }
+    80%{
+        background-image: url("/assets/build.png");
+    }
+}
+
+.step-banner .step-banner-content{
+display: flex;
+justify-content:center;
+flex-wrap: wrap;
+flex:1 1 12rem;
+gap:1rem;
+}
+.step-banner .step-banner-content .step-card{
+border:2px solid rgb(206, 206, 206);
+display:flex;
+flex-direction: column;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+width:22%;
+height:fit-content;
+background-color: white;
+padding-top:3rem;
+padding: 1rem;
+margin-top:-5.5rem;
+cursor: pointer;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.step-banner .step-banner-content .step-card i{
+font-size:3rem;
+padding:1.5rem 1.7rem;
+color:white;
+border-radius: 50%;
+background-color: var(--orange-color);
+margin:1rem;
+}
+.step-banner .step-banner-content .step-card h4{
+font-size: 1.2rem;
+font-weight: normal;
+margin-bottom: 1rem;
+}
+
+.step-banner .step-banner-content .step-card p{
+width:80%;
+font-size: 1.2rem;
+text-align: center;
+margin-bottom: 1rem;
+}
+
+
+
+/*----------------    IMAGE-FOOTER-SECTION   ----------------*/
+.image-footer{
+height: 31rem;
+display:grid;
+grid-template-columns: 1fr 1fr 1fr;
+padding-top:1rem;
+margin-top:4rem ;
+}
+
+.image-footer .img-footer{
+    height:30rem;
+    object-fit: cover
+}
+.image-footer .img-footer img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/*----------------   FOOTER-SECTION   ----------------*/
+.footer{
+    background-color: #ff4e00;
+    background-image: linear-gradient(315deg, #ff4e00 0%, #ec8805 84%);
+    color:white;
+    display:flex;
+    justify-content: space-between;
+    padding:2rem 3rem;
+    
+}
+
+.footer a{
+    color:white;
+    letter-spacing: 0.1rem;
+    transition:all 0.5s ease-in-out;
+}
+
+.footer a i{
+    margin-left:1rem;
+}
+.footer a:hover{
+    color:black;
+}
+
+
+
+/*----------------  CONTACT-PAGE-STYLING  ----------------*/
+.contact-header{
+    position:relative;
+}
+.contact-toggle{
+    position: absolute;
+}
+.contact-section{
+    background-image: url("/assets/vu-anh-TiVPTYCG_3E-unsplash.jpg");
+    height:100vh;
+    width:100vw;
+    object-fit:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition:all 1s ease-in-out;
+    position:relative;
+    z-index: 2;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-content-box{
+    height:80vh;
+    width:75vw;
+ margin-left:-4rem;
+    z-index: 6;
+    padding:2rem;
+}
+.contact-section:before{
+    content:"";
+    height:90vh;
+    width:80vw;
+    position:absolute;
+    top:5%;
+    left:8.5%;
+    background-color: white;
+    opacity:0.9;
+    z-index:-1;
+}
+/*----------------  UPPER-CONTENT-SECTION   ----------------*/
+.upper-content-box{
+text-align:center;
+margin-bottom: 2rem;
+}
+.upper-content-box h1{
+font-size: 3rem;
+}
+.upper-content-box h4{
+width:10rem;
+margin:1rem auto;
+border-top:0.3rem solid var(--orange-color);
+}
+.upper-content-box h3{
+letter-spacing: 0.3rem;
+margin-bottom: 0.5rem;
+}       
+
+
+/*----------------  LOWER-CONTENT-SECTION   ----------------*/
+.lower-content-box{
+display:flex;
+justify-content: space-between;
+height:60%;
+padding:1rem;
+}
+
+.lower-content-box .left-lower-content-box h3{
+font-size:1rem;
+}
+.lower-content-box .left-lower-content-box i{
+padding:0.7rem 0.8rem;
+background-color:var(--orange-color);
+border-radius: 50%;
+}
+.lower-content-box .left-lower-content-box .after-gap{
+margin-bottom:1.5rem;
+}
+
+.lower-content-box .right-lower-content-box{
+display:flex;
+flex-direction: column;
+width:40%;
+}
+.lower-content-box .right-lower-content-box input{
+height:3.5rem;
+padding:1rem;
+    }
+.contact-inputs{
+    z-index: 100;
+    margin-bottom: 0.8rem;  
+    outline:none;
+    border: none;
+    padding-left: 1rem;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------mediaqueries----------------*/
+@media screen and (max-width:1200px){
+/*----------------CARD-SECTION----------------*/
+.cards-section{
+    padding:4rem 10rem;
+}
+.cards-section .cards{
+   
+    flex:1 1 15rem;
+    height:25rem;
+    max-height:30rem;
+    padding:1rem 2rem;
+    }
+
+    .constuction-services{
+        padding:4rem;
+        }
+
+        .dream-home .dream-home-content {
+            width: 80%;
+        }
+        .dream-home .dream-home-img img{
+            object-fit:cover;
+        } 
+
+        .step-banner .step-banner-content .step-card {
+            width: 30%;
+        }
+        .image-footer {
+            margin-top: 8rem;
+        }
+
+
+        .contact-section::before {
+            height: 100%;
+            top: 0%;
+        }
+        .main-content-box {
+            height: 100%;
+        }
+}
+@media screen and (max-width:820px){
+    .header-banner .header-banner-content{
+        width: 100%;
+}
+
+.cards-section {
+    padding: 4rem 6rem;
+}
+
+.sustainable-section p {
+    width: 65%;
+}
+.constuction-services {
+    padding: 4rem 3rem;
+}
+.constuction-services .construction-services-container{
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 20rem 20rem 20rem;
+   
+    }
+    .girl-img{
+        grid-area:1/2/3/3;
+    }
+    .paper-img{
+    grid-area:3/1/4/2;
+    }
+    .house-img{
+        grid-area:3/2/4/3;
+    }
+
+    .dream-home .dream-home-content h1 {
+        font-size: 3rem;
+    line-height:3rem;
+    }
+    
+    
+    .dream-home .dream-home-content p {
+        line-height: 1.7rem;
+    }
+
+    .step-banner{
+        height: 50rem;
+         }
+
+    .step-banner .step-banner-content .step-card {
+        width: 30%;
+    }
+    .step-banner .step-banner-content .step-card p {
+        width: 100%;
+    }
+
+
+   
+
+
+}
+
+
+
+@media screen and (max-width:600px){
+/*-------------header-------------*/
+.logo {
+    padding-left: 0.5rem;
+}
+
+.social-icons {
+    margin-right: 0.5rem;
+}
+.social-icons i {
+    padding: 0rem 0.1rem;
+}
+
+.cards-section {
+    padding: 4rem 4rem;
+}
+
+  /*-------------header-banner-------------*/
+.header-banner .header-banner-content h1 {
+width: 70%;
+}
+.header-banner .header-banner-content {
+padding-left: 1rem;
+}
+.header-banner {
+height: 30rem;
+}
+
+.header-banner .header-banner-content .email-input {
+width: 90%;
+}
+
+.header-banner .header-banner-content .email-input span.submit-btn {
+width: 30%;
+}
+.cards-section {
+    padding: 4rem 2rem;
+}
+.cards-section .cards {
+    height: 29rem;
+max-height: 35rem;
+    padding: 1rem 2rem;
+}
+
+
+.sustainable-section {
+    padding: 4rem 2.5rem;
+}
+
+.sustainable-section p {
+    width: 95%;
+}
+.constuction-services {
+    padding: 4rem 1rem;
+}
+.constuction-services .construction-services-container{
+    grid-template-columns: 1fr;
+    grid-template-rows: 20rem 20rem 20rem 20rem 10rem 10rem;
+   
+    }
+
+    .girl-img{
+        grid-area:3/1/5/2;
+    }
+    .paper-img{
+    grid-area:5/1/6/2;
+    }
+    .house-img{
+        grid-area:6/1/7/2;
+    }
+
+    .dream-home .dream-home-img img {
+        width: 100%;
+    }
+    
+    .dream-home .dream-home-content {
+        width: 100%;
+    }
+    
+    .dream-home {
+        grid-template-columns: 1fr;
+        grid-template-rows: 30rem;
+    }
+    .step-banner {
+        height: 95rem;
+    }
+    .step-banner-img{
+        height:20%;
+    }
+    .step-banner .step-banner-content{
+       flex-direction: column;
+       align-items:center;
+       gap:4rem;
+    }
+    .step-banner .step-banner-content .step-card{
+        width:75%;
+        height:fit-content;
+        margin-top:-5.5rem;
+        height:25rem;
+      
+        }
+
+        .image-footer {
+            margin-top: 1rem;
+        }
+        
+        .image-footer {
+            grid-template-columns: 1fr;
+            grid-template-rows: 30rem 30rem 30rem;
+            height: 92rem;
+        }
+
+        .footer{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap:1.2rem;
+        }
+        .footer a{
+font-size:1rem;
+letter-spacing: 0rem;
+text-align: center;
+        }
+
+
+/*----------------  CONTACT-PAGE-STYLING  ----------------*/
+        .contact-section{
+            height:fit-content;
+            }
+        .contact-section:before{
+            height:100%;
+            width:100vw;
+            top:0%;
+            left:0%;
+        }
+
+        .main-content-box {
+             margin-left: 0rem;
+             width:100%;
+             height:fit-content;
+        }
+
+        .lower-content-box {
+            flex-direction:column;
+            height: fit-content;
+        }
+
+        .lower-content-box .right-lower-content-box {
+            width: 91%;
+        }
+}
+
+
+
+
+@media screen and (max-width:400px){
+    .construction-services-content-container {
+        padding:2rem 1rem;
+        padding-top:4rem;
+    }
+    
+    .construction-services-content-container h1 {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+/*----------------  CONTACT-PAGE-STYLING  ----------------*/
+    .lower-content-box .right-lower-content-box {
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+@media screen and (max-width:300px){
+    /*-------------header-------------*/
+    .header {
+       font-size: 0.8rem;
+   }
+   /*-------------header-sidebar-------------*/
+   #header-sidebar .menu li {
+       justify-content: left;
+       align-items:flex-start;
+       padding-left: 2rem;
+   }
+   
+   .sidebar-icon-close {
+       top:35px;
+       left: 30px;
+       right: 0;
+   }
+   
+   
+   /*-------------header-banner-------------*/
+   
+   .header-banner .header-banner-content {
+       margin: 0rem 1rem;
+       margin-top: 1rem;
+   
+   }
+   .header-banner::before{
+       opacity:0.6;
+   
+       
+       }
+   .header-banner .header-banner-content h1 {
+       width: 100%;
+   margin-bottom: 1rem;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   }
+   
+   
+   .header-banner .header-banner-content .email-input span.submit-btn {
+        position: inherit;
+        height: 3rem;
+       padding: 0.7rem 2.5rem;
+       width: 55%;
+   }
+   
+   .header-banner .header-banner-content .email-input input[type="email"] {
+     
+       margin-bottom: 1.5rem;
+   }
+
+   .cards-section {
+    padding: 4rem 1rem;
+}
+.sustainable-section {
+    padding: 4rem 1rem;
+}
+.construction-services-content-container a {
+    font-size: 0.8rem;
+}
+
+
+.dream-home {
+    grid-template-rows: 35rem;
+}
+a.home-btn{
+    font-size:0.8rem;
+}
+
+   }

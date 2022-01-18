@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start With Us</title>
+     <!-- All CSS Files link  -->
+   <link rel="stylesheet" href="main.css">
+   <link rel="stylesheet" href="otherpages.css">
+   <!-- font awesome cdn link  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
+</head>
+<body>
+    <!-- HEADER  -->
+<div class="header">
+    <div class="logo orange-color">
+    <a href="#"><h1>AMBUJ</h1></a> 
+    </div>
+            
+    <div class="social-icons">
+    <a href="#"> <i class="fab fa-facebook-f"></i></a> 
+     <a href="#">  <i class="fab fa-twitter"></i></a> 
+    <a href="#"> <i class="fab fa-instagram"></i></a> 
+    </div>
+    </div>
+                <!--HEADER-MENU-SIDEBAR  -->
+    <input type="checkbox" id="opensidebarmenu">
+    <label for="opensidebarmenu" class="sidebar-icon-toggle">
+    <div class="spinner top-spinner"></div>
+    <div class="spinner middle-spinner"></div>
+    <div class="spinner bottom-spinner"></div>
+    </label>
+    <div id="header-sidebar">
+    <ul class="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="blogs.html">Blogs</a></li>
+    <li><a href="start-with-us.html">Start With Us</a></li>
+    <li><a href="about.html">Abou Us</a></li>
+    <li><a href="contact-us.html">Contact</a></li>
+                
+    </ul>
+    <label for="opensidebarmenu" class="sidebar-icon-close">
+    <i class="fas fa-times"></i>
+    </label>
+    </div>
+    
+
+<!-- Payment-form  -->
+<section class="payment-form">
+    <div class="payment-container">
+        <form action="" method="get">
+    <div class="form-header">  
+        <img src="/assets/christiann-koepke-dQyS2pMYtok-unsplash.jpg" alt="">  
+   <h1 class="main_heading"> Payment Form </h1></div>
+    <hr>
+    <h2> Contact Information </h2>
+    <p> Required fields are followed by * </p>
+   <br>
+   <!-- text -->
+    <p> Name : * <input type = "text" name = "name" required></p>
+   
+  
+   <!-- radio -->
+   <p>Gender:</p>
+   <fieldset>
+     
+    <p class="gender-tag"><p>Male</p> <input type = "radio" name = "gender" id = "male"></p>
+    <p class="gender-tag"><p>Female</p>  <input type = "radio" name = "gender" id="female"></p>
+        <p class="gender-tag"> <p>Others</p>  <input type ="radio" name="gender" id ="others"></p>
+   
+  </fieldset>
+    
+    
+    <!-- text area -->
+    <p> 
+        Address : * <textarea name ="address" cols="50" rows ="8" required></textarea>
+    </p>
+    
+   
+   <!-- Email -->
+    <p> Email : * <input type ="email" id ="email" required></p>
+    
+    
+    <!-- Pincode -->
+   <p> Pincode : * <input type ="number" name ="pincode" id ="pincode" required></p>
+    
+    <h2> Payment Information </h2>
+   Accepted cards<br>
+<img class="visa-img" src="/assets/visa.png" alt="error" width="20%">
+  
+ <!-- Select box - when we have to choose from multiple options -->
+	
+  <p> Card Type : 
+    <select name * ="card_type" id="card_type" required>
+    <option value =""> -- Select a card type --
+    </option>
+    <option value ="visa"> Visa </option>
+    <option value ="rupay"> Rupay </option>
+    <option value ="mastercard"> Mastercard </option>
+    </select>
+    </p>
+    
+    
+    <!-- Number -->
+    <p>
+        Card Number * <input type ="number" name ="card_number" id ="card_number" required>
+    </p>
+    
+    
+    <!-- Date -->
+  <p> Expiration date : * <input type ="date" name ="exp_date" id ="exp_date" required></p>
+	
+	
+ <!-- Password -->
+  <p>
+      CVV * <input type ="password" name ="cvv" id ="cvv" required>
+  </p>
+<br>
+  <!-- Pay Now Button -->
+  <p> <input type ="submit" value =" Pay Now">
+  </p>
+  
+  
+  </form>
+    </div>
+
+</section>
+
+
+  <!-- FOOTER-SECTION  -->
+  <section class="footer">
+    <div class="left-footer">
+      <a href="#"><h3>© SHIVANI, ALL RIGHTS RESERVED!</h3></a>  
+    </div>
+    <div class="right-footer">
+        <a href="#">  <i class="fab fa-facebook-f"></i></a>  
+        <a href="#"><i class="fab fa-twitter"></i></a>  
+        <a href="#"> <i class="fab fa-instagram"></i></a>  
+        <a href="#"> <i class="fab fa-linkedin-in"></i></a>  
+    </div>
+</section>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
